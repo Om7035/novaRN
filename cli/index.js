@@ -3,8 +3,15 @@
 const { program } = require('commander');
 const fs = require('fs-extra');
 const path = require('path');
+const axios = require('axios');
+const { extract } = require('tar');
 const chalk = require('chalk').default;
 const { createSpinner } = require('nanospinner');
+
+// 🔧 CONFIG: Point to your public GitHub template repo
+const GITHUB_USER = 'Om7035'; // ← CHANGE THIS!
+const REPO_NAME = 'novarn';
+const BRANCH = 'main';
 
 // Version check function
 async function checkForUpdates() {
@@ -20,6 +27,18 @@ async function checkForUpdates() {
   } catch (err) {
     // Silently fail update check
   }
+}
+
+// Progress tracking for downloads
+function createDownloadProgress() {
+  let lastLogged = 0;
+  return (loaded, total) => {
+    const percent = Math.round((loaded / total) * 100);
+    if (percent - lastLogged >= 5 || percent === 100) {
+      lastLogged = percent;
+      process.stdout.write(`\r${chalk.gray(`📥 Downloading template: ${percent}%`)}`);
+    }
+  };
 }
 
 program
@@ -49,32 +68,31 @@ program
       // Create project folder
       await fs.ensureDir(targetDir);
       spinner.success({ text: 'Project directory created' });
-      spinner.start({ text: 'Copying template files...' });
+      spinner.start({ text: 'Downloading template...' });
 
-      // Get the root directory of the CLI (this file's directory)
-      const cliRoot = path.resolve(__dirname);
-      // Get the template directory (parent of cli directory)
-      const templateDir = path.resolve(cliRoot, '..');
+      // Download tarball from GitHub (public repo → no auth needed)
+      const tarballUrl = `https://codeload.github.com/${GITHUB_USER}/${REPO_NAME}/tar.gz/${BRANCH}`;
       
       if (options.verbose) {
-        console.log(chalk.gray(`\n📁 Copying template from:\n   ${templateDir}\n`));
-        console.log(chalk.gray(`📂 Copying to:\n   ${targetDir}\n`));
+        console.log(chalk.gray(`📥 Fetching latest template from:\n   ${tarballUrl}\n`));
       }
 
-      // Copy all files from template directory to target directory, excluding node_modules, .git, cli folder, and test-project
-      const excludeDirs = ['node_modules', '.git', 'cli', 'test-project'];
-      
-      const copyOptions = {
-        filter: (src) => {
-          const relativePath = path.relative(templateDir, src);
-          const parts = relativePath.split(path.sep);
-          
-          // Don't copy excluded directories
-          return !parts.some(part => excludeDirs.includes(part));
-        }
-      };
+      const response = await axios({
+        method: 'GET',
+        url: tarballUrl,
+        responseType: 'stream',
+        timeout: 30000,
+        onDownloadProgress: options.verbose ? createDownloadProgress() : undefined
+      });
 
-      await fs.copy(templateDir, targetDir, copyOptions);
+      // Extract directly into targetDir (strip top-level folder from tar)
+      spinner.start({ text: 'Extracting template...' });
+      await new Promise((resolve, reject) => {
+        response.data
+          .pipe(extract({ strip: 1, C: targetDir }))
+          .on('finish', resolve)
+          .on('error', reject);
+      });
 
       // Update package.json name to match folder
       spinner.start({ text: 'Updating project configuration...' });

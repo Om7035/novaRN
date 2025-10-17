@@ -1,19 +1,43 @@
 # create-nova-rn
 
+<p align="center">
+  <a href="https://github.com/Om7035/novaRN/stargazers">
+    <img src="https://img.shields.io/github/stars/Om7035/novaRN?style=flat-square" alt="GitHub Stars">
+  </a>
+  <a href="https://github.com/Om7035/novaRN/issues">
+    <img src="https://img.shields.io/github/issues/Om7035/novaRN?style=flat-square" alt="GitHub Issues">
+  </a>
+  <a href="https://github.com/Om7035/novaRN/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Om7035/novaRN?style=flat-square" alt="GitHub License">
+  </a>
+  <a href="https://npmjs.com/package/create-nova-rn">
+    <img src="https://img.shields.io/npm/v/create-nova-rn?style=flat-square" alt="NPM Version">
+  </a>
+</p>
+
 A CLI to scaffold [NovaRN](https://github.com/Om7035/novarn) — the vibe-coded, production-ready Expo boilerplate for 2025.
 
-## ✨ Features
-- Expo Router + TypeScript
-- Auth + API + Offline sync ("The Trinity")
-- Dark/light/system mode
-- TanStack Query + Zustand
-- Form handling and validation
-- Global error boundaries
-- Rich UI component library
-- NativeWind (Tailwind CSS for React Native)
-- EAS Build ready
+<p align="center">
+  <img src="../src/assets/images/icon.png" width="200" alt="NovaRN Logo" />
+</p>
 
-## 🚀 Usage
+## 🌟 Why NovaRN?
+
+NovaRN is the ultimate React Native boilerplate that eliminates the friction of starting a new project. It's designed for developers who want to build production-ready apps without the boilerplate headaches.
+
+### Key Benefits
+
+✨ **Zero Configuration** - Get started in seconds, not hours  
+🔒 **Production-Ready Security** - Secure token handling built-in  
+📡 **Offline-First Architecture** - Works even when the internet doesn't  
+🎨 **Modern Styling** - NativeWind (Tailwind CSS) for beautiful UIs  
+⚡ **Performance Optimized** - Lightweight stack with best practices  
+📚 **Well Documented** - Comprehensive examples and guides  
+🛠 **Developer Experience** - TypeScript, ESLint, and more
+
+---
+
+## 🚀 Quick Start
 
 ```bash
 # Create a new NovaRN app
@@ -28,6 +52,24 @@ npm install
 # Start the development server
 npx expo start
 ```
+
+That's it! You now have a fully functional React Native app with authentication, offline support, and a rich component library.
+
+---
+
+## ✨ Features
+
+- Expo Router + TypeScript
+- Auth + API + Offline sync ("The Trinity")
+- Dark/light/system mode
+- TanStack Query + Zustand
+- Form handling and validation
+- Global error boundaries
+- Rich UI component library
+- NativeWind (Tailwind CSS for React Native)
+- EAS Build ready
+
+---
 
 ## 🧰 Commands
 
@@ -57,6 +99,8 @@ npx create-nova-rn MyApp --verbose
 # Template selection (currently only 'full' is available)
 npx create-nova-rn MyApp --template full
 ```
+
+---
 
 ## 📁 Project Structure
 
@@ -91,6 +135,8 @@ MyApp/
 14. **Dependency verification script** for maintenance
 15. **NativeWind** (Tailwind CSS for React Native)
 
+---
+
 ## 🎨 NativeWind (Tailwind CSS for React Native)
 
 NovaRN now includes NativeWind for styling components with Tailwind CSS classes:
@@ -112,9 +158,82 @@ export const MyComponent = () => {
 };
 ```
 
+---
+
+## 🧪 Testing
+
+NovaRN includes a comprehensive testing setup with Jest and React Native Testing Library:
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm test -- --watch
+
+# Run tests with coverage
+npm test -- --coverage
+```
+
+---
+
+## 🚀 Deployment
+
+### EAS Build (Recommended)
+```bash
+# Install EAS CLI
+npm install -g eas-cli
+
+# Configure your project
+eas build:configure
+
+# Build for iOS
+eas build --platform ios
+
+# Build for Android
+eas build --platform android
+```
+
+---
+
+## 🤝 Contributing
+
+We love contributions! NovaRN is built by developers for developers.
+
+### How to Contribute
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Reporting Issues
+**Found a friction point? That's a bug.**
+
+NovaRN is designed to be frictionless. If you hit a snag, [open an issue](https://github.com/Om7035/novaRN/issues). We treat developer experience bugs as seriously as code bugs.
+
+---
+
+## 📚 Learn More
+
+- [Expo documentation](https://docs.expo.dev/)
+- [Expo Router docs](https://docs.expo.dev/router/introduction/)
+- [TanStack Query docs](https://tanstack.com/query/latest)
+- [Zustand docs](https://zustand-demo.pmnd.rs/)
+- [NativeWind docs](https://www.nativewind.dev/)
+
+---
+
 ## 📄 License
+
 MIT
 
 ---
 
-**Built with ❤️ for the React Native community.**
+<p align="center">
+  <strong>Built with ❤️ for the React Native community.</strong>
+</p>
+
+<p align="center">
+  <sub>If you like NovaRN, please consider starring the repo! ⭐</sub>
+</p>

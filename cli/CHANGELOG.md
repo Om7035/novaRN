@@ -2,6 +2,15 @@
 
 All notable changes to the create-nova-rn CLI will be documented in this file.
 
+## [1.0.5] - 2025-10-17
+
+### Improved
+- Updated CLI to use remote template downloading from GitHub
+- Added axios and tar dependencies for template fetching
+- Implemented progress tracking during template download
+- Improved template extraction process
+- Updated repository URL to point to CLI repository
+
 ## [1.0.4] - 2025-10-17
 
 ### Added
