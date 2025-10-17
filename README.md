@@ -19,6 +19,9 @@
   <a href="https://npmjs.com/package/create-nova-rn">
     <img src="https://img.shields.io/npm/v/create-nova-rn?style=flat-square" alt="NPM Version">
   </a>
+  <a href="https://github.com/Om7035/novaRN/actions">
+    <img src="https://img.shields.io/github/workflow/status/Om7035/novaRN/CI?style=flat-square" alt="Build Status">
+  </a>
 </p>
 
 ## 🌟 Why Developers Love NovaRN

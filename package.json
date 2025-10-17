@@ -62,7 +62,6 @@
     "jest": "^30.2.0",
     "typescript": "~5.9.2"
   },
-  "private": true,
   "keywords": [
     "expo",
     "react-native",
