@@ -3,22 +3,28 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { useColorScheme } from '@/shared/hooks/use-color-scheme';
+import QueryProvider from '@/shared/providers/QueryProvider';
+import { useAuthBoundary } from '@/shared/hooks/useAuthBoundary';
+import { useAppTheme } from '@/shared/hooks/use-app-theme';
+import { ErrorBoundary } from '@/shared/components/ErrorBoundary';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  const systemColorScheme = useColorScheme();
+  const appTheme = useAppTheme();
+  useAuthBoundary();
+
+  // Determine which theme to use for React Navigation
+  const navigationTheme = appTheme === 'dark' ? DarkTheme : DefaultTheme;
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <QueryProvider>
+        <ThemeProvider value={navigationTheme}>
+          <Stack screenOptions={{ headerShown: false }} />
+          <StatusBar style={appTheme === 'dark' ? 'light' : 'dark'} />
+        </ThemeProvider>
+      </QueryProvider>
+    </ErrorBoundary>
   );
 }

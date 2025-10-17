@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "NovaRNTemplate",
-    "slug": "NovaRNTemplate",
+    "name": "NovaRN",
+    "slug": "novarn",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "novarntemplate",
+    "scheme": "novarn",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
