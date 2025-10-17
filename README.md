@@ -51,6 +51,7 @@ Built-in optimistic updates and cache persistence with MMKV. Your app works even
 - **TanStack Query + Axios** (data fetching with 401 silent refresh)
 - **expo-secure-store** (refresh tokens only)
 - **MMKV** (cache persistence)
+- **NativeWind** (Tailwind CSS for React Native)
 
 ## Folder Structure
 
@@ -121,6 +122,10 @@ NovaRNTemplate/
 │   │       └── collapsible.tsx  # Collapsible component
 │   └── README.md                # Source code documentation
 │
+├── cli/                          # 🧰 CLI Tool
+│   ├── index.js                 # CLI entry point
+│   └── package.json             # CLI package configuration
+│
 ├── .vscode/                      # VS Code settings
 ├── eas.json                      # EAS Build configuration
 └── package.json                  # Dependencies
@@ -142,6 +147,7 @@ NovaRNTemplate/
 12. **Global error boundaries** for crash recovery
 13. **Rich UI component library** for rapid development
 14. **Dependency verification script** for maintenance
+15. **NativeWind** (Tailwind CSS for React Native)
 
 ## Golden Rules
 
@@ -160,6 +166,27 @@ The authentication system is designed with security in mind:
 - Auth state (user, accessToken) lives in memory using Zustand
 - Automatic 401 interception and token refresh
 - Hardware authentication support on Android
+
+## NativeWind (Tailwind CSS for React Native)
+
+NovaRN now includes NativeWind for styling components with Tailwind CSS classes:
+
+```tsx
+import { View, Text, TouchableOpacity } from 'react-native';
+
+export const MyComponent = () => {
+  return (
+    <View className="flex-1 justify-center items-center bg-gray-100 dark:bg-gray-900 p-4">
+      <Text className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+        NativeWind Example
+      </Text>
+      <TouchableOpacity className="bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 px-6 py-3 rounded-lg">
+        <Text className="text-white font-semibold">Click Me</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+```
 
 ## Form Handling
 
@@ -365,8 +392,6 @@ npm install
 npx expo start
 ```
 
-> **Note:** The `create-nova-rn` CLI is coming soon. For now, clone this repo and rename it.
-
 ---
 
 ## Getting Started
@@ -417,6 +442,7 @@ NovaRN is designed to be frictionless. If you hit a snag, open an issue. We trea
 - [Expo Router docs](https://docs.expo.dev/router/introduction/)
 - [TanStack Query docs](https://tanstack.com/query/latest)
 - [Zustand docs](https://zustand-demo.pmnd.rs/)
+- [NativeWind docs](https://www.nativewind.dev/)
 
 ---
 

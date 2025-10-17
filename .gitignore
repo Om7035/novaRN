@@ -41,3 +41,6 @@ app-example
 # generated native folders
 /ios
 /android
+
+# CLI node_modules
+cli/node_modules/

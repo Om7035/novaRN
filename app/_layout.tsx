@@ -2,12 +2,14 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
+import 'nativewind';
 
 import { useColorScheme } from '@/shared/hooks/use-color-scheme';
 import QueryProvider from '@/shared/providers/QueryProvider';
 import { useAuthBoundary } from '@/shared/hooks/useAuthBoundary';
 import { useAppTheme } from '@/shared/hooks/use-app-theme';
 import { ErrorBoundary } from '@/shared/components/ErrorBoundary';
+import '../global.css';
 
 export default function RootLayout() {
   const systemColorScheme = useColorScheme();
