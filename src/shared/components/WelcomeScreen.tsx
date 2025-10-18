@@ -26,7 +26,7 @@ export const WelcomeScreen = () => {
         <View style={[styles.featureCard, effectiveTheme === 'dark' && styles.darkFeatureCard]}>
           <Text style={[styles.featureTitle, effectiveTheme === 'dark' && styles.darkFeatureTitle]}>🔐 Secure Authentication</Text>
           <Text style={[styles.featureDescription, effectiveTheme === 'dark' && styles.darkFeatureDescription]}>
-            JWT-based auth with refresh tokens stored in expo-secure-store. 
+            Refresh tokens stored in expo-secure-store. 
             Access tokens live in memory only.
           </Text>
         </View>

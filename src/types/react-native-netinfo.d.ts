@@ -1,5 +1,15 @@
 declare module 'react-native-netinfo' {
-  import { NetInfoState, NetInfoStateType, NetInfoConnectedDetails } from '@react-native-netinfo';
+  export type NetInfoStateType = 'none' | 'unknown' | 'cellular' | 'wifi' | 'bluetooth' | 'ethernet' | 'wimax' | 'vpn' | 'other';
+  
+  export interface NetInfoConnectedDetails {
+    isConnectionExpensive?: boolean;
+    ssid?: string;
+    bssid?: string;
+    strength?: number;
+    ipAddress?: string;
+    subnet?: string;
+    frequency?: number;
+  }
   
   export interface NetInfoState {
     type: NetInfoStateType;
