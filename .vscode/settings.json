@@ -19,7 +19,11 @@
     "signup",
     "nativewind",
     "Kawale",
-    "reactnative"
+    "reactnative",
+    "nanospinner",
+    "doesn",
+    "wimax",
+    "bssid"
   ],
   "cSpell.ignorePaths": [
     "node_modules/**",

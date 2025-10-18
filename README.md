@@ -3,7 +3,7 @@
 > **A production-ready React Native boilerplate that just works.** Built with Expo Router, TypeScript, and offline-first architecture.
 
 <p align="center">
-  <img src="src/assets/images/icon.png" width="200" alt="NovaRN Logo" />
+  <img src="src/assets/images/Banner.png" width="2000" alt="NovaRN Logo" />
 </p>
 
 <p align="center">
