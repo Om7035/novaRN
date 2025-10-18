@@ -16,7 +16,8 @@ Your NovaRN template and CLI are **production-ready** and **fully functional**:
 
 ### 1. Test Everything Locally
 ```bash
-# Test the CLI locally (in f:\NOVA\NovaRNTemplate)
+# IMPORTANT: Run from f:\NOVA\NovaRNTemplate directory
+cd f:\NOVA\NovaRNTemplate
 npm run test-cli
 
 # Or manually
