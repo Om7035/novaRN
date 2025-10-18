@@ -20,5 +20,10 @@
     "nativewind",
     "Kawale",
     "reactnative"
+  ],
+  "cSpell.ignorePaths": [
+    "node_modules/**",
+    ".git/**",
+    "*.log"
   ]
 }

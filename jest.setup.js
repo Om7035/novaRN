@@ -1,6 +1,9 @@
 // Jest setup for React Native with Expo
 // Mock essential modules and configure environment
 
+/* eslint-env jest */
+/* global jest */
+
 // Mock react-native modules that are not available in Node.js
 jest.mock('react-native', () => {
   return {

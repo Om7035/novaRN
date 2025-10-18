@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
-import { useAuthStore } from '@/store/useAuthStore';
-import { silentRefresh, logout } from '@/hooks/useAuth';
+import { useAuthStore } from '@/features/auth/store/useAuthStore';
+import { silentRefresh, logout } from '@/features/auth/hooks/useAuth';
 
 /**
  * Axios HTTP client configuration

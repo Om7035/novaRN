@@ -2,7 +2,7 @@ import React from 'react';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { MMKV } from 'react-native-mmkv';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
-import { queryClient } from '@/api/queryClient';
+import { queryClient } from '@/shared/api/queryClient';
 
 /**
  * Query provider component

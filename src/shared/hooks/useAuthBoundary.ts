@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSegments, useRouter } from 'expo-router';
-import { useAuthStore } from '@/store/useAuthStore';
+import { useAuthStore } from '@/features/auth/store/useAuthStore';
 
 export function useAuthBoundary() {
   const { isAuthenticated } = useAuthStore();
