@@ -1,6 +1,6 @@
 {
   "name": "create-nova-rn",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "Create a production-ready Expo app with TypeScript, auth, offline support, and dark mode — powered by NovaRN.",
   "bin": {
     "create-nova-rn": "./index.js"
@@ -21,7 +21,7 @@
     "node": ">=18"
   },
   "keywords": ["expo", "react-native", "boilerplate", "typescript", "cli"],
-  "author": "Om Kawale",
+  "author": "Om7035",
   "license": "MIT",
   "homepage": "https://github.com/Om7035/novaRN",
   "repository": {

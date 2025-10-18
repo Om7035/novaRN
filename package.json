@@ -15,7 +15,7 @@
     "deploy": "node ./scripts/deploy.js",
     "test-cli": "cd cli && node index.js test-app --verbose",
     "postinstall": "node ./scripts/post-install.js",
-    "setup": "npm install && npm run postinstall"
+    "setup": "npm install --legacy-peer-deps && node ./scripts/post-install.js"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",

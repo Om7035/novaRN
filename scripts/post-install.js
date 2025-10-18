@@ -9,6 +9,13 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+// Skip enhanced features in production mode
+if (process.env.NODE_ENV === 'production' || process.env.npm_config_production === 'true') {
+  console.log('🚀 NovaRN: Core features installed successfully!');
+  console.log('   Run "npm run setup" to install enhanced features.');
+  process.exit(0);
+}
+
 console.log('🚀 NovaRN: Installing enhanced features...');
 
 // Optional dependencies for enhanced features
