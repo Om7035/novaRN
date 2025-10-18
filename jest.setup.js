@@ -1,5 +1,5 @@
-// Simple Jest setup for React Native
-// Mock only the most essential modules to avoid import issues
+// Jest setup for React Native with Expo
+// Mock essential modules and configure environment
 
 // Mock react-native modules that are not available in Node.js
 jest.mock('react-native', () => {

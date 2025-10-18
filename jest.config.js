@@ -5,8 +5,7 @@ module.exports = {
     '<rootDir>/jest.setup.js'
   ],
   transformIgnorePatterns: [
-    // cSpell:disable-next-line
-    'node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)'
+    'node_modules/(?!(react-native|@react-native|expo|@expo|@testing-library)/)'
   ],
   collectCoverageFrom: [
     '**/*.{js,jsx,ts,tsx}',
@@ -33,5 +32,6 @@ module.exports = {
     '<rootDir>/.expo/',
     '<rootDir>/android/',
     '<rootDir>/ios/',
+    '<rootDir>/cli/',
   ]
 };
