@@ -119,12 +119,16 @@ program
 
       spinner.success({ text: 'NovaRN app created successfully!' });
       console.log(chalk.green('\n✅ Success! Your NovaRN app is ready.'));
-      console.log(chalk.white(`
-Next steps:
-  cd ${projectDir}
-  npm install
-  npx expo start
-`));
+      console.log('');
+      console.log('🚀 Quick Start (Fast):');
+      console.log(`  cd ${projectDir}`);
+      console.log('  npm install --production');
+      console.log('  npx expo start');
+      console.log('');
+      console.log('🔧 Full Setup (All Features):');
+      console.log(`  cd ${projectDir}`);
+      console.log('  npm run setup');
+      console.log('  npx expo start');
 
     } catch (err) {
       spinner.error({ text: `Failed to create project: ${err.message || err}` });
