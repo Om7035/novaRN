@@ -11,7 +11,9 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "test": "jest",
-    "verify-deps": "node ./scripts/verify-dependencies.js"
+    "verify-deps": "node ./scripts/verify-dependencies.js",
+    "deploy": "node ./scripts/deploy.js",
+    "test-cli": "cd cli && node index.js test-app --verbose"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",

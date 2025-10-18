@@ -94,7 +94,7 @@ program
           .on('error', reject);
       });
 
-      // Update package.json name to match folder
+      // Update package.json name to match folder and clean up CLI folder
       spinner.start({ text: 'Updating project configuration...' });
       const pkgPath = path.join(targetDir, 'package.json');
       if (await fs.pathExists(pkgPath)) {
@@ -103,6 +103,18 @@ program
         // Remove private flag so it can be published if needed
         delete pkg.private;
         await fs.writeJson(pkgPath, pkg, { spaces: 2 });
+      }
+
+      // Remove CLI folder from the template (not needed in user projects)
+      const cliPath = path.join(targetDir, 'cli');
+      if (await fs.pathExists(cliPath)) {
+        await fs.remove(cliPath);
+      }
+
+      // Remove .git folder if it exists
+      const gitPath = path.join(targetDir, '.git');
+      if (await fs.pathExists(gitPath)) {
+        await fs.remove(gitPath);
       }
 
       spinner.success({ text: 'NovaRN app created successfully!' });

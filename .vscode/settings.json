@@ -8,7 +8,7 @@
   "typescript.tsserver.experimental.enableProjectDiagnostics": false,
   "editor.formatOnSave": true,
   "cSpell.words": [
-    "novarntemplate",
+    "novarn",
     "mmkv",
     "MMKV",
     "netinfo",
@@ -16,6 +16,9 @@
     "mobileprovision",
     "nent",
     "unimodules",
-    "signup"
+    "signup",
+    "nativewind",
+    "Kawale",
+    "reactnative"
   ]
 }
