@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { ThemeToggle } from '@/shared/components/ThemeToggle';
 import { useThemeStore } from '@/shared/store/useThemeStore';
 import { useAppTheme } from '@/shared/hooks/use-app-theme';
@@ -35,7 +35,7 @@ export const WelcomeScreen = () => {
           <Text style={[styles.featureTitle, effectiveTheme === 'dark' && styles.darkFeatureTitle]}>📴 Offline-First</Text>
           <Text style={[styles.featureDescription, effectiveTheme === 'dark' && styles.darkFeatureDescription]}>
             Built-in optimistic updates and cache persistence with MMKV. 
-            Your app works even when the internet doesn't.
+            Your app works even when the internet doesn&apos;t.
           </Text>
         </View>
         
