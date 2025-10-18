@@ -6,8 +6,6 @@
  */
 
 const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
 
 // Skip enhanced features in production mode
 if (process.env.NODE_ENV === 'production' || process.env.npm_config_production === 'true') {
@@ -55,7 +53,7 @@ try {
   console.log('Next steps:');
   console.log('   npx expo start');
   
-} catch (error) {
+} catch (_error) {
   console.log('⚠️  Some enhanced features could not be installed.');
   console.log('   Your app will still work with core features.');
   console.log('   Run "npm install" again to retry.');
