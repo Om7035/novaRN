@@ -1,6 +1,6 @@
 {
   "name": "create-nova-rn",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Create a production-ready Expo app with TypeScript, auth, offline support, and dark mode — powered by NovaRN.",
   "bin": {
     "create-nova-rn": "./index.js"
